@@ -1,6 +1,8 @@
 const __login = (): JSX.Element => {
   return (
-    <h1>Login Resides here...</h1>  
+    <div className="relative w-full h-screen">
+      <h1>Hello World</h1>
+    </div>
   )
 }
 
