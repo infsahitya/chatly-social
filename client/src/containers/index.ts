@@ -1,5 +1,3 @@
-import __login from "./login/__login";
+import __login from './login/__login';
 
-export {
-  __login as Login
-}
+export { __login as Login };
