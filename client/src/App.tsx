@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Login } from './containers';
+import { Login, Signup } from './containers';
 import { WelcomeUser } from './layouts';
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
 
       <Route path="/" element={<WelcomeUser />}>
         <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
       </Route>
     </Routes>
   );
