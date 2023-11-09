@@ -7,6 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log('Everything is running fine I guess');
     return this.appService.getHello();
   }
 }
