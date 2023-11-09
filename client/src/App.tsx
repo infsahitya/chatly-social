@@ -1,11 +1,15 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Login } from './containers';
+import { WelcomeUser } from './layouts';
 
 const App = () => {
   return (
     <Routes>
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<h1>Hello Signup</h1>} />
+      <Route path="/" element={<Navigate to={'login'} />} />
+
+      <Route path="/" element={<WelcomeUser />}>
+        <Route path="login" element={<Login />} />
+      </Route>
     </Routes>
   );
 };
