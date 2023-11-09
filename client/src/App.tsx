@@ -1,6 +1,12 @@
+import { Route, Routes } from "react-router-dom";
+import { Login } from "./containers";
+
 const App = () => {
   return (
-    <h1>Hello World</h1>
+    <Routes>
+      <Route path="login" element={<Login />}/>
+      <Route path="signup" element={<h1>Hello Signup</h1>}/>
+    </Routes>
   );
 }
 
