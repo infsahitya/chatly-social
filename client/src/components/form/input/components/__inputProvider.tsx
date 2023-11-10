@@ -15,8 +15,6 @@ const __inputProvider = forwardRef<HTMLInputElement, InputProviderProps>(
             ? 'email'
             : type === 'text'
             ? 'text'
-            : type === 'password'
-            ? 'text'
             : type === 'number'
             ? 'numeric'
             : 'text'

@@ -26,7 +26,7 @@ const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
         <InputProvider
           {...props}
           ref={inputRef}
-          type="password"
+          type={showPass ? 'text' : 'password'}
           labelRef={labelRef}
           wrapperRef={wrapperRef}
         />
