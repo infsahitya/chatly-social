@@ -9,6 +9,7 @@ const __input = ({
   icon,
   type,
   label,
+  sx,
   ...props
 }: CustomInputProps): JSX.Element => {
   const wrapperRef = useRef<HTMLDivElement>(null!);
@@ -19,7 +20,7 @@ const __input = ({
     <div
       ref={wrapperRef}
       onClick={() => handleWrapperClick(inputRef)}
-      className="relative outline outline-transparent outline-2 h-[3.75rem] px-3 rounded-3xl gap-2 flex items-center justify-start bg-secondaryDark cursor-text transition-all duration-300"
+      className={`relative ${sx?.width} outline outline-transparent outline-2 h-[3.75rem] px-3 rounded-3xl gap-2 flex items-center justify-start bg-secondaryDark cursor-text transition-all duration-300`}
     >
       {cloneElement(icon, {
         className: 'text-xl text-textGray',

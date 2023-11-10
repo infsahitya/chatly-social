@@ -8,6 +8,6 @@ export function handleInputBlur(
   if (!e.target.value) {
     labelRef.current!.style.fontSize = '1rem';
     labelRef.current!.style.transform = 'translateY(50%)';
-    wrapperRef.current!.style.outlineColor = 'transparent';
   }
+  wrapperRef.current!.style.outlineColor = 'transparent';
 }

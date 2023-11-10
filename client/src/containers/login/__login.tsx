@@ -10,7 +10,12 @@ const __login = (): JSX.Element => {
         <GoDotFill className="text-primaryBlue text-lg inline align-bottom" />
       </h1>
 
-      <Input type="text" label="Username" icon={<HiMiniUser />} />
+      <Input
+        type="text"
+        label="Username"
+        icon={<HiMiniUser />}
+        sx={{ width: 'w-full' }}
+      />
     </>
   );
 };
