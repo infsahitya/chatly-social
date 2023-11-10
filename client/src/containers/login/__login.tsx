@@ -1,12 +1,12 @@
 import { GoDotFill } from 'react-icons/go';
 import { Button, Input } from '../../components/form';
-import { HiMiniUser } from 'react-icons/hi2';
+import { HiUser } from 'react-icons/hi2';
 import { RiLockPasswordFill } from 'react-icons/ri';
 
 const __login = (): JSX.Element => {
   return (
     <>
-      <h1 className="text-textGray font-bold text-4xl">
+      <h1 className="text-textGray font-bold text-4xl select-none">
         Login to your account
         <GoDotFill className="text-primaryBlue text-lg inline align-bottom" />
       </h1>
@@ -21,7 +21,7 @@ const __login = (): JSX.Element => {
           name="email"
           id="email"
           required
-          icon={<HiMiniUser />}
+          icon={<HiUser />}
           sx={{ width: 'w-full' }}
         />
 

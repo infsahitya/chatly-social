@@ -36,7 +36,10 @@ const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
       <Button
         category="unstyled"
         label={showPass ? <HiMiniEyeSlash /> : <HiMiniEye />}
-        onClick={() => setShowPass((curr) => !curr)}
+        onClick={(e) => {
+          e.preventDefault();
+          setShowPass((curr) => !curr);
+        }}
         sx={{ color: 'text-textGray', fontSize: 'text-lg' }}
       />
     </ParentWrapper>

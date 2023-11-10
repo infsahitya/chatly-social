@@ -9,7 +9,7 @@ const __parentWrapper = forwardRef<HTMLDivElement, InputParentWrapperProps>(
       <div
         ref={ref}
         onClick={() => handleWrapperClick(inputRef)}
-        className={`relative ${sx?.width} outline outline-transparent outline-[1.5px] h-[3.75rem] px-3 rounded-3xl gap-2 flex items-center justify-start bg-secondaryDark cursor-text transition-all duration-300`}
+        className={`relative ${sx?.width} outline outline-transparent outline-[1.5px] h-[3.75rem] px-4 rounded-3xl gap-3 flex items-center justify-start bg-secondaryDark cursor-text transition-all duration-300`}
       >
         {children}
       </div>
