@@ -1,4 +1,4 @@
-import { EmailInput, TextInput } from './modules';
+import { EmailInput, PasswordInput, TextInput } from './modules';
 
 const __input = ({ ...props }: CustomInputProps): JSX.Element => {
   switch (props.type) {
@@ -6,6 +6,8 @@ const __input = ({ ...props }: CustomInputProps): JSX.Element => {
       return <TextInput {...props} />;
     case 'email':
       return <EmailInput {...props} />;
+    case 'password':
+      return <PasswordInput {...props} />;
     default:
       return <TextInput {...props} />;
   }
