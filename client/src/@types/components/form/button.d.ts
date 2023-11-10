@@ -1,15 +1,15 @@
-interface CustomUnstyledButtonProps {
+interface CustomUnstyledButtonProps extends React.ComponentProps<'button'> {
   category: 'unstyled';
 }
 
-interface CustomStyledButtonProps {
-  category: 'unstyled';
+interface CustomStyledButtonProps extends React.ComponentProps<'button'> {
+  category: 'styled';
   variant: 'filled' | 'outlined' | 'transparent';
 }
 
-interface CustomButtonProps
-  extends React.ComponentProps<'button'>,
-    CustomStyledButtonProps,
-    CustomUnstyledButtonProps {
+type CustomButtonProps = (
+  | CustomStyledButtonProps
+  | CustomUnstyledButtonProps
+) & {
   label: string;
-}
+};
