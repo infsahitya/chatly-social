@@ -2,6 +2,7 @@ import { GoDotFill } from 'react-icons/go';
 import { Button, Input } from '../../components/form';
 import { HiUser } from 'react-icons/hi2';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const __login = (): JSX.Element => {
   return (
@@ -34,6 +35,13 @@ const __login = (): JSX.Element => {
           icon={<RiLockPasswordFill />}
           sx={{ width: 'w-full' }}
         />
+
+        <Link
+          to={'/forgot-password'}
+          className="text-primaryBlue text-sm hover:underline ml-2"
+        >
+          Forgot Password?
+        </Link>
 
         <Button label={'Login'} category="styled" variant="filled" />
       </form>

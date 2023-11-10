@@ -4,6 +4,7 @@ interface ButtonCommonSXProps {
   margin?: string;
   padding?: string;
   textAlign?: string;
+  display?: string;
 }
 
 interface CustomUnstyledButtonProps extends React.ComponentProps<'button'> {
