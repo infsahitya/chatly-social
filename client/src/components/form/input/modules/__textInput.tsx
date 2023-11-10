@@ -25,7 +25,7 @@ const __textInput = ({ ...props }: CustomInputProps): JSX.Element => {
           inputMode="text"
           onFocus={() => handleInputFocus(labelRef, wrapperRef)}
           onBlur={(e) => handleInputBlur(e, labelRef, wrapperRef)}
-          className="relative bg-transparent outline-none text-textGray w-full"
+          className="relative bg-transparent outline-none text-textGray w-full tracking-wider"
         />
       </InnerWrapper>
     </ParentWrapper>
