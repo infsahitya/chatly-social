@@ -20,6 +20,7 @@ const __login = (): JSX.Element => {
           label="Email"
           name="email"
           id="email"
+          autoFocus
           icon={<HiMiniUser />}
           sx={{ width: 'w-full' }}
         />
