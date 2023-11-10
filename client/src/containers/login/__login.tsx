@@ -12,7 +12,7 @@ const __login = (): JSX.Element => {
 
       <Input
         type="text"
-        label="Username"
+        label="Username or Email"
         icon={<HiMiniUser />}
         sx={{ width: 'w-full' }}
       />
