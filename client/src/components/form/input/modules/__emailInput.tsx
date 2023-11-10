@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { handleInputBlur, handleInputFocus } from '../handlers';
 import {
   InnerWrapper,
   InputIcon,
   InputLabel,
+  InputProvider,
   ParentWrapper,
 } from '../components';
 
@@ -18,14 +18,12 @@ const __emailInput = ({ ...props }: CustomInputProps): JSX.Element => {
       <InputIcon icon={icon} />
       <InnerWrapper>
         <InputLabel ref={labelRef} label={label} htmlFor={props.id} />
-        <input
+        <InputProvider
           {...props}
-          type="email"
           ref={inputRef}
-          inputMode="email"
-          onFocus={() => handleInputFocus(labelRef, wrapperRef)}
-          onBlur={(e) => handleInputBlur(e, labelRef, wrapperRef)}
-          className="relative bg-transparent outline-none text-textGray w-full tracking-wider"
+          type="email"
+          labelRef={labelRef}
+          wrapperRef={wrapperRef}
         />
       </InnerWrapper>
     </ParentWrapper>

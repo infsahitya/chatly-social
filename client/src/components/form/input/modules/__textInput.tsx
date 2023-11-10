@@ -1,9 +1,9 @@
-import { handleInputBlur, handleInputFocus } from '../handlers';
 import { useRef } from 'react';
 import {
   InnerWrapper,
   InputIcon,
   InputLabel,
+  InputProvider,
   ParentWrapper,
 } from '../components';
 
@@ -18,14 +18,12 @@ const __textInput = ({ ...props }: CustomInputProps): JSX.Element => {
       <InputIcon icon={icon} />
       <InnerWrapper>
         <InputLabel ref={labelRef} label={label} htmlFor={props.id} />
-        <input
+        <InputProvider
           {...props}
-          type={'text'}
           ref={inputRef}
-          inputMode="text"
-          onFocus={() => handleInputFocus(labelRef, wrapperRef)}
-          onBlur={(e) => handleInputBlur(e, labelRef, wrapperRef)}
-          className="relative bg-transparent outline-none text-textGray w-full tracking-wider"
+          type="text"
+          labelRef={labelRef}
+          wrapperRef={wrapperRef}
         />
       </InnerWrapper>
     </ParentWrapper>

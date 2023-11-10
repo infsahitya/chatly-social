@@ -4,7 +4,7 @@ type InputSXProps = {
 
 interface InputParentWrapperProps {
   children: JSX.Element | JSX.Element[];
-  inputRef: RefObject<HTMLInputElement>;
+  inputRef: React.MutableRefObject<HTMLInputElement>;
   sx?: InputSXProps;
 }
 
@@ -19,6 +19,12 @@ interface InputInnerWrapperProps {
 interface InputLabelProps {
   htmlFor: string | undefined;
   label: string;
+}
+
+interface InputProviderProps extends CustomInputProps {
+  labelRef: React.MutableRefObject<HTMLLabelElement>;
+  wrapperRef: React.MutableRefObject<HTMLDivElement>;
+  type: CustomInputProps['type'];
 }
 
 interface CustomInputProps
