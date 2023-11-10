@@ -11,10 +11,15 @@ const __login = (): JSX.Element => {
         <GoDotFill className="text-primaryBlue text-lg inline align-bottom" />
       </h1>
 
-      <form className="relative w-full flex flex-col items-start justify-center gap-4">
+      <form
+        className="relative w-full flex flex-col items-start justify-center gap-4"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <Input
           type="email"
           label="Email"
+          name="email"
+          id="email"
           icon={<HiMiniUser />}
           sx={{ width: 'w-full' }}
         />
@@ -22,6 +27,8 @@ const __login = (): JSX.Element => {
         <Input
           type="password"
           label="Password"
+          name="password"
+          id="password"
           icon={<RiLockPasswordFill />}
           sx={{ width: 'w-full' }}
         />

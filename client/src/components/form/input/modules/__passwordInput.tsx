@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { handleInputBlur, handleInputFocus } from '../handlers';
 import {
   InnerWrapper,
@@ -6,10 +6,14 @@ import {
   InputLabel,
   ParentWrapper,
 } from '../components';
-// import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
+import { Button } from '../..';
+import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
 
 const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
   const { icon, label, sx } = props;
+
+  const [showPass, setShowPass] = useState<boolean>(false);
+
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const labelRef = useRef<HTMLLabelElement>(null!);
   const inputRef = useRef<HTMLInputElement>(null!);
@@ -21,7 +25,7 @@ const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
         <InputLabel ref={labelRef} label={label} htmlFor={props.id} />
         <input
           {...props}
-          type="password"
+          type={showPass ? 'text' : 'password'}
           ref={inputRef}
           inputMode="text"
           onFocus={() => handleInputFocus(labelRef, wrapperRef)}
@@ -29,6 +33,12 @@ const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
           className="relative bg-transparent outline-none text-textGray w-full"
         />
       </InnerWrapper>
+      <Button
+        category="unstyled"
+        label={showPass ? <HiMiniEyeSlash /> : <HiMiniEye />}
+        onClick={() => setShowPass((curr) => !curr)}
+        sx={{ color: 'text-textGray', fontSize: 'text-lg' }}
+      />
     </ParentWrapper>
   );
 };
