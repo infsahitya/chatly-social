@@ -2,10 +2,12 @@ import { RefObject } from 'react';
 
 export function handleInputBlur(
   e: React.FocusEvent<HTMLInputElement>,
-  ref: RefObject<HTMLLabelElement>,
+  labelRef: RefObject<HTMLLabelElement>,
+  wrapperRef: RefObject<HTMLDivElement>,
 ) {
   if (!e.target.value) {
-    ref.current!.style.fontSize = '1rem';
-    ref.current!.style.transform = 'translateY(50%)';
+    labelRef.current!.style.fontSize = '1rem';
+    labelRef.current!.style.transform = 'translateY(50%)';
+    wrapperRef.current!.style.outlineColor = 'transparent';
   }
 }

@@ -1,16 +1,26 @@
 import { cloneElement, useRef } from 'react';
-import { handleInputBlur, handleInputFocus } from './handlers';
+import {
+  handleInputBlur,
+  handleInputFocus,
+  handleWrapperClick,
+} from './handlers';
 
 const __input = ({
+  icon,
   type,
   label,
-  icon,
   ...props
 }: CustomInputProps): JSX.Element => {
+  const wrapperRef = useRef<HTMLDivElement>(null!);
   const labelRef = useRef<HTMLLabelElement>(null!);
+  const inputRef = useRef<HTMLInputElement>(null!);
 
   return (
-    <div className="relative h-[3.75rem] px-3 rounded-3xl gap-2 flex items-center justify-start bg-secondaryDark ">
+    <div
+      ref={wrapperRef}
+      onClick={() => handleWrapperClick(inputRef)}
+      className="relative outline outline-transparent outline-2 h-[3.75rem] px-3 rounded-3xl gap-2 flex items-center justify-start bg-secondaryDark cursor-text transition-all duration-300"
+    >
       {cloneElement(icon, {
         className: 'text-xl text-textGray',
       })}
@@ -25,8 +35,9 @@ const __input = ({
         <input
           {...props}
           type={type}
-          onFocus={() => handleInputFocus(labelRef)}
-          onBlur={(e) => handleInputBlur(e, labelRef)}
+          ref={inputRef}
+          onFocus={() => handleInputFocus(labelRef, wrapperRef)}
+          onBlur={(e) => handleInputBlur(e, labelRef, wrapperRef)}
           className="relative bg-transparent outline-none text-textGray"
         />
       </div>
