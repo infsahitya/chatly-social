@@ -7,7 +7,7 @@ const __inputLabel = forwardRef<HTMLLabelElement, InputLabelProps>(
       <label
         ref={ref}
         htmlFor={htmlFor}
-        className="relative translate-y-[50%] text-textGray text-opacity-40 text-[1rem] transition-all duration-300"
+        className="relative translate-y-[50%] text-textGray text-opacity-40 text-[1rem] transition-all duration-300 select-none"
       >
         {label}
       </label>

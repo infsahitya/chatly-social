@@ -1,11 +1,17 @@
-interface ButtonSXProps {
+interface ButtonCommonSXProps {
   color?: string;
   fontSize?: string;
+  margin?: string;
+  padding?: string;
+  textAlign?: string;
 }
 
 interface CustomUnstyledButtonProps extends React.ComponentProps<'button'> {
   category: 'unstyled';
-  sx?: ButtonSXProps;
+  sx?: {
+    bg?: string;
+    border?: string;
+  } & ButtonCommonSXProps;
 }
 
 interface CustomStyledButtonProps extends React.ComponentProps<'button'> {

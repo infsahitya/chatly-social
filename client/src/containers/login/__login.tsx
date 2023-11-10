@@ -1,5 +1,5 @@
 import { GoDotFill } from 'react-icons/go';
-import { Input } from '../../components/form';
+import { Button, Input } from '../../components/form';
 import { HiMiniUser } from 'react-icons/hi2';
 import { RiLockPasswordFill } from 'react-icons/ri';
 
@@ -20,7 +20,7 @@ const __login = (): JSX.Element => {
           label="Email"
           name="email"
           id="email"
-          autoFocus
+          required
           icon={<HiMiniUser />}
           sx={{ width: 'w-full' }}
         />
@@ -30,9 +30,12 @@ const __login = (): JSX.Element => {
           label="Password"
           name="password"
           id="password"
+          required
           icon={<RiLockPasswordFill />}
           sx={{ width: 'w-full' }}
         />
+
+        <Button label={'Login'} category="styled" variant="filled" />
       </form>
     </>
   );
