@@ -6,7 +6,9 @@ const __welcomeUser = (): JSX.Element => {
     <div className="relative w-full h-screen bg-primaryDark p-7 flex flex-col items-start justify-center gap-8">
       <BrandHeader />
       <TabsWrapper />
-      <Outlet />
+      <div className="relative w-[24rem] flex flex-col items-start justify-start">
+        <Outlet />
+      </div>
     </div>
   );
 };
