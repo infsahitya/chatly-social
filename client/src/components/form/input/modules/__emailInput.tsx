@@ -5,7 +5,7 @@ import {
   handleWrapperClick,
 } from '../handlers';
 
-const __textInput = ({ ...props }: CustomInputProps): JSX.Element => {
+const __emailInput = ({ ...props }: CustomInputProps): JSX.Element => {
   const { icon, label, sx } = props;
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const labelRef = useRef<HTMLLabelElement>(null!);
@@ -30,9 +30,9 @@ const __textInput = ({ ...props }: CustomInputProps): JSX.Element => {
         </label>
         <input
           {...props}
-          type={'text'}
+          type="email"
           ref={inputRef}
-          inputMode="text"
+          inputMode="email"
           onFocus={() => handleInputFocus(labelRef, wrapperRef)}
           onBlur={(e) => handleInputBlur(e, labelRef, wrapperRef)}
           className="relative bg-transparent outline-none text-textGray w-full"
@@ -42,4 +42,4 @@ const __textInput = ({ ...props }: CustomInputProps): JSX.Element => {
   );
 };
 
-export default __textInput;
+export default __emailInput;

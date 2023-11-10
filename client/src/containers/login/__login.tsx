@@ -11,8 +11,8 @@ const __login = (): JSX.Element => {
       </h1>
 
       <Input
-        type="text"
-        label="Username or Email"
+        type="email"
+        label="Email"
         icon={<HiMiniUser />}
         sx={{ width: 'w-full' }}
       />
