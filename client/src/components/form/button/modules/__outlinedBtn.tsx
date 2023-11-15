@@ -1,4 +1,4 @@
-const __filledBtn = ({ ...props }: CustomButtonProps): JSX.Element => {
+const __outlinedBtn = ({ ...props }: CustomButtonProps): JSX.Element => {
   return (
     <button {...props} className={`${props.sx?.color} ${props.sx?.margin}`}>
       {props.label}
@@ -6,4 +6,4 @@ const __filledBtn = ({ ...props }: CustomButtonProps): JSX.Element => {
   );
 };
 
-export default __filledBtn;
+export default __outlinedBtn;

@@ -1,25 +1,40 @@
 interface ButtonCommonSXProps {
   color?: string;
-  fontSize?: string;
   margin?: string;
-  padding?: string;
   textAlign?: string;
   display?: string;
 }
 
-interface CustomUnstyledButtonProps extends React.ComponentProps<'button'> {
+interface FilledBtnStyleProps {
+  variant: 'filled';
+  sx: { bg: string } & ButtonCommonSXProps;
+}
+
+interface OutlinedBtnStyleProps {
+  variant: 'outlined';
+  sx?: { border?: string } & ButtonCommonSXProps;
+}
+
+interface TransparentBtnStyleProps {
+  variant: 'transparent';
+  sx?: { border?: string; bg?: string } & ButtonCommonSXProps;
+}
+
+type CustomUnstyledButtonProps = {
   category: 'unstyled';
   sx?: {
     bg?: string;
     border?: string;
   } & ButtonCommonSXProps;
-}
+} & React.ComponentProps<'button'>;
 
-interface CustomStyledButtonProps extends React.ComponentProps<'button'> {
+type CustomStyledButtonProps = (
+  | FilledBtnStyleProps
+  | OutlinedBtnStyleProps
+  | TransparentBtnStyleProps
+) & {
   category: 'styled';
-  variant: 'filled' | 'outlined' | 'transparent';
-  sx?: ButtonSXProps;
-}
+} & React.ComponentProps<'button'>;
 
 type CustomButtonProps = (
   | CustomStyledButtonProps

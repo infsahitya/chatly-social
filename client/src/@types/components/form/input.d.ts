@@ -1,6 +1,6 @@
-type InputSXProps = {
+interface InputSXProps {
   width?: string;
-};
+}
 
 interface InputParentWrapperProps {
   children: JSX.Element | JSX.Element[];
@@ -32,5 +32,4 @@ interface CustomInputProps
   type: 'text' | 'password' | 'email' | 'number';
   icon: ReactElement<any, any>;
   label: string;
-  sx?: InputSXProps;
 }
