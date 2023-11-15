@@ -32,4 +32,5 @@ interface CustomInputProps
   type: 'text' | 'password' | 'email' | 'number';
   icon: ReactElement<any, any>;
   label: string;
+  sx?: InputSXProps;
 }

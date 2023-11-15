@@ -1,7 +1,15 @@
-const __outlinedBtn = ({ ...props }: CustomButtonProps): JSX.Element => {
+import { StyledBtnSX } from '.';
+
+const __outlinedBtn = ({ ...props }: OutlinedBtnStyleProps): JSX.Element => {
+  const { label } = props;
+  const { color, display, margin, textAlign, border, width } = props.sx;
+
   return (
-    <button {...props} className={`${props.sx?.color} ${props.sx?.margin}`}>
-      {props.label}
+    <button
+      {...props}
+      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width}`}
+    >
+      {label}
     </button>
   );
 };

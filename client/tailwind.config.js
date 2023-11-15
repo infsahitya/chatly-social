@@ -13,7 +13,19 @@ export default {
       },
       fontFamily: {
         body: ['Nunito', 'sans-serif'],
-        // 'brand': ['Agbaluma', 'sans-serif']
+      },
+      keyframes: {
+        button_ripple: {
+          '0%': { opacity: 1, transform: 'scale(0)', background: '#fff' },
+          '100%': {
+            opacity: 0,
+            transform: 'scale(50)',
+            background: 'transparent',
+          },
+        },
+      },
+      animation: {
+        button_ripple: 'button_ripple 0.5s ease forwards',
       },
     },
   },

@@ -43,7 +43,17 @@ const __login = (): JSX.Element => {
           Forgot Password?
         </Link>
 
-        <Button label={'Login'} category="styled" variant="filled" />
+        <Button
+          label={'Login'}
+          category="styled"
+          variant="filled"
+          sx={{
+            bg: 'bg-primaryBlue',
+            color: 'text-textGray',
+            width: 'w-[10rem]',
+            display: 'self-center',
+          }}
+        />
       </form>
     </>
   );
