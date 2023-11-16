@@ -6,7 +6,7 @@ const __tabsWrapper = (): JSX.Element => {
   const indicatorRef = useRef<HTMLSpanElement>(null!);
 
   return (
-    <div className="relative flex items-center justify-center z-0">
+    <div className="relative flex items-center justify-center">
       <Tab to={'login'} onClick={(e) => handleTabIndicator(e, indicatorRef)}>
         Login
       </Tab>

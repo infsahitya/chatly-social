@@ -6,7 +6,7 @@ const __tab = ({ children, to, ...props }: AuthTabProps): JSX.Element => {
     <NavLink
       {...props}
       to={to}
-      className={`relative text-textGray w-[12rem] text-center rounded-xl py-3 z-1`}
+      className={`relative text-textGray w-[12rem] text-center rounded-xl py-3 z-10`}
     >
       {children}
     </NavLink>
