@@ -2,12 +2,13 @@ import { GoDotFill } from 'react-icons/go';
 import { Button } from '../../components/form';
 import { FaArrowRight } from 'react-icons/fa';
 import { NameEmail, PassConfirm } from './modules';
-import { useRef } from 'react';
+import { useState } from 'react';
+import { handleConsumers } from './handlers';
 
 const userDataConsumer: JSX.Element[] = [<NameEmail />, <PassConfirm />];
 
 const __signup = (): JSX.Element => {
-  const consumerRenderCount = useRef<number>(0);
+  const [consumerRenderCount, setConsumerRenderCount] = useState<number>(0);
 
   return (
     <>
@@ -17,10 +18,10 @@ const __signup = (): JSX.Element => {
       </h1>
 
       <form
-        className="relative w-full flex flex-col items-start justify-center gap-4"
         onSubmit={(e) => e.preventDefault()}
+        className="relative w-full flex flex-col items-start justify-center gap-4"
       >
-        {userDataConsumer[consumerRenderCount.current]}
+        {userDataConsumer[consumerRenderCount]}
 
         <Button
           label={
@@ -31,13 +32,19 @@ const __signup = (): JSX.Element => {
           }
           category="styled"
           variant="filled"
+          className="group"
           sx={{
             bg: 'bg-primaryBlue',
             color: 'text-textGray',
             width: 'w-[10rem]',
             display: 'flex items-center justify-center self-center',
           }}
-          className="group"
+          onClick={() =>
+            handleConsumers('next', userDataConsumer.length, {
+              state: consumerRenderCount,
+              stateHandler: setConsumerRenderCount,
+            })
+          }
         />
       </form>
     </>

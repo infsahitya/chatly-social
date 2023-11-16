@@ -3,7 +3,7 @@ import { BrandHeader, TabsWrapper } from './modules';
 
 const __welcomeUser = (): JSX.Element => {
   return (
-    <div className="relative w-full h-screen bg-primaryDark p-7 flex flex-col items-start justify-center">
+    <div className="relative w-full h-screen bg-primaryDark p-7 flex items-center justify-start">
       <div className="absolute top-0 left-0 m-7 flex flex-col items-start justify-center gap-5">
         <BrandHeader />
         <TabsWrapper />
