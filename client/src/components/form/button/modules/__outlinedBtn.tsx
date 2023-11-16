@@ -33,7 +33,7 @@ const __outlinedBtn = ({ ...props }: OutlinedBtnStyleProps): JSX.Element => {
     <button
       {...props}
       ref={btnRef}
-      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width}`}
+      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${props.className}`}
     >
       <span className="relative block z-10">{label}</span>
       {ripple ? <Ripple coords={coords} /> : <></>}

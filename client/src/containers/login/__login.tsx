@@ -1,6 +1,5 @@
 import { GoDotFill } from 'react-icons/go';
 import { Button, Input } from '../../components/form';
-import { HiUser } from 'react-icons/hi2';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +21,7 @@ const __login = (): JSX.Element => {
           name="email"
           id="email"
           required
-          icon={<HiUser />}
+          icon={<span>@</span>}
           sx={{ width: 'w-full' }}
         />
 

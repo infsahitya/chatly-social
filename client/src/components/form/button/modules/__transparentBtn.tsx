@@ -34,7 +34,7 @@ const __transparentBtn = ({
   return (
     <button
       {...props}
-      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${bg}`}
+      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${bg} ${props.className}`}
     >
       <span className="relative block z-10">{label}</span>
       {ripple ? <Ripple coords={coords} /> : <></>}

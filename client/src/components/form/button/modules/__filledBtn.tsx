@@ -33,9 +33,9 @@ const __filledBtn = ({ ...props }: FilledBtnStyleProps): JSX.Element => {
     <button
       {...props}
       ref={btnRef}
-      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${bg} ${width}`}
+      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${bg} ${width} ${props.className}`}
     >
-      <span className="relative block z-10">{label}</span>
+      {label}
       {ripple ? <Ripple coords={coords} /> : <></>}
     </button>
   );
