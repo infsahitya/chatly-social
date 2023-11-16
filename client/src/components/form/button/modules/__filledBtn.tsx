@@ -1,18 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { StyledBtnSX } from '.';
-
-const Ripple = ({
-  coords,
-}: {
-  coords: { x: number; y: number };
-}): JSX.Element => {
-  return (
-    <span
-      style={{ left: coords.x, top: coords.y }}
-      className="absolute rounded-full w-[5px] h-[5px] bg-transparent animate-button_ripple"
-    />
-  );
-};
+import { RippleEffect } from '../utils';
+import { Ripple } from '../components';
 
 const __filledBtn = ({ ...props }: FilledBtnStyleProps): JSX.Element => {
   const { label } = props;
@@ -24,12 +13,14 @@ const __filledBtn = ({ ...props }: FilledBtnStyleProps): JSX.Element => {
   const btnRef = useRef<HTMLButtonElement>(null!);
 
   useEffect(() => {
-    btnRef.current.addEventListener('click', (e) => {
-      const rect = (e.target as HTMLElement).getBoundingClientRect();
-      setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-      setRipple(true);
-      setTimeout(() => setRipple(false), 300);
-    });
+    btnRef.current.addEventListener('click', (e) =>
+      RippleEffect(e, setCoords, setRipple),
+    );
+    return () => {
+      btnRef.current.removeEventListener('click', (e) =>
+        RippleEffect(e, setCoords, setRipple),
+      );
+    };
   }, []);
 
   useEffect(() => {

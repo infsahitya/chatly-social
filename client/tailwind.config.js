@@ -16,7 +16,7 @@ export default {
       },
       keyframes: {
         button_ripple: {
-          '0%': { opacity: 1, transform: 'scale(0)', background: '#fff' },
+          '0%': { opacity: 1, transform: 'scale(0)', background: '#ffffff' },
           '100%': {
             opacity: 0,
             transform: 'scale(50)',
