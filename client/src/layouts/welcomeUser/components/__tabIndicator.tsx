@@ -8,7 +8,7 @@ const __tabIndicator = forwardRef<HTMLSpanElement, TabIndicatorProps>(
     return (
       <span
         ref={ref}
-        className="absolute left-0 w-[12rem] z-0 rounded-xl h-full bg-secondaryDark transition-all duration-500"
+        className="absolute left-0 w-[12rem] z-0 rounded-xl h-full bg-secondaryDark transition-all duration-300"
       />
     );
   },

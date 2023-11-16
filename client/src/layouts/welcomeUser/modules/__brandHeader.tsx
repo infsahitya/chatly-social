@@ -3,7 +3,7 @@ import { appName } from '../../../data/constants';
 
 const __brandHeader = (): JSX.Element => {
   return (
-    <span className="absolute flex items-center justify-start gap-3 top-0 left-0 m-7">
+    <span className="relative flex items-center justify-start gap-3">
       <TbBrandTwitterFilled className="text-primaryBlue text-4xl" />
       <h1 className="relative text-textGray font-semibold text-3xl">
         {appName}
