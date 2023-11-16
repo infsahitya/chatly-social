@@ -17,6 +17,7 @@ const __filledBtn = ({ ...props }: FilledBtnStyleProps): JSX.Element => {
       RippleEffect(e, setCoords, setRipple),
     );
     return () => {
+      // eslint-disable-next-line
       btnRef.current.removeEventListener('click', (e) =>
         RippleEffect(e, setCoords, setRipple),
       );
