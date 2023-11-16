@@ -1,10 +1,19 @@
-import { Tab } from '../components';
+import { useRef } from 'react';
+import { Tab, TabIndicator } from '../components';
+import { handleTabIndicator } from '../handlers';
 
 const __tabsWrapper = (): JSX.Element => {
+  const indicatorRef = useRef<HTMLSpanElement>(null!);
+
   return (
-    <div className="relative flex items-center justify-center">
-      <Tab to={'login'}>Login</Tab>
-      <Tab to={'signup'}>Signup</Tab>
+    <div className="relative flex items-center justify-center z-0">
+      <Tab to={'login'} onClick={(e) => handleTabIndicator(e, indicatorRef)}>
+        Login
+      </Tab>
+      <Tab to={'signup'} onClick={(e) => handleTabIndicator(e, indicatorRef)}>
+        Signup
+      </Tab>
+      <TabIndicator ref={indicatorRef} />
     </div>
   );
 };

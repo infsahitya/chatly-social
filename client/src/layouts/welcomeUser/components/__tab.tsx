@@ -1,14 +1,12 @@
 import { NavLink } from 'react-router-dom';
+import { AuthTabProps } from '../../../@types/layouts/welcomeUser';
 
-const __tab = ({ children, to }: AuthTabProps): JSX.Element => {
+const __tab = ({ children, to, ...props }: AuthTabProps): JSX.Element => {
   return (
     <NavLink
+      {...props}
       to={to}
-      className={({ isActive }) =>
-        `text-textGray w-[12rem] text-center rounded-xl py-3 ${
-          isActive ? 'bg-secondaryDark' : 'bg-transparent'
-        }`
-      }
+      className={`relative text-textGray w-[12rem] text-center rounded-xl py-3 z-1`}
     >
       {children}
     </NavLink>
