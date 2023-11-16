@@ -13,12 +13,13 @@ const __outlinedBtn = ({ ...props }: OutlinedBtnStyleProps): JSX.Element => {
   const btnRef = useRef<HTMLButtonElement>(null!);
 
   useEffect(() => {
-    btnRef.current.addEventListener('click', (e) =>
+    const btnEl = btnRef.current;
+
+    btnEl.addEventListener('click', (e) =>
       RippleEffect(e, setCoords, setRipple),
     );
     return () => {
-      // eslint-disable-next-line
-      btnRef.current.removeEventListener('click', (e) =>
+      btnEl.removeEventListener('click', (e) =>
         RippleEffect(e, setCoords, setRipple),
       );
     };
