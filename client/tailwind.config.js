@@ -25,7 +25,7 @@ export default {
         },
       },
       animation: {
-        button_ripple: 'button_ripple 0.5s ease forwards',
+        button_ripple: 'button_ripple 0.7s ease forwards',
       },
     },
   },
