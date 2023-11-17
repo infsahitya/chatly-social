@@ -1,4 +1,4 @@
-function __handleConsumers(
+function __handleConsumer(
   e: React.MouseEvent,
   action: 'previous' | 'next',
   totalConsumer: number,
@@ -21,4 +21,4 @@ function __handleConsumers(
   }
 }
 
-export default __handleConsumers;
+export default __handleConsumer;

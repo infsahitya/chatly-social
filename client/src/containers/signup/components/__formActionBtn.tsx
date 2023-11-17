@@ -1,5 +1,5 @@
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { handleConsumers } from '../handlers';
+import { handleConsumer } from '../handlers';
 import { Button } from '../../../components/form';
 
 const __formActionBtn = ({
@@ -31,7 +31,7 @@ const __formActionBtn = ({
           : renderCount.state === userDataConsumerLength - 1
       }
       onClick={(e) =>
-        handleConsumers(e, action, userDataConsumerLength, renderCount)
+        handleConsumer(e, action, userDataConsumerLength, renderCount)
       }
     >
       {action === 'previous' ? (

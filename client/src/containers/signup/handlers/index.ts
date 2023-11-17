@@ -1,3 +1,3 @@
-import __handleConsumers from './__handleConsumers';
+import __handleConsumer from './__handleConsumer';
 
-export { __handleConsumers as handleConsumers };
+export { __handleConsumer as handleConsumer };
