@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { GoDotFill } from 'react-icons/go';
 import { FormActionBtn } from './components';
 import { NameEmail, PassConfirm } from './modules';
+import { Button } from '../../components/form';
+import { FcGoogle } from 'react-icons/fc';
 
 const userDataConsumer = [NameEmail, PassConfirm];
 
@@ -41,6 +43,27 @@ const __signup = (): JSX.Element => {
           />
         </div>
       </form>
+
+      <span className="relative w-full flex items-center justify-center">
+        <hr className="relative h-[1px] w-full bg-focusGray border-none rounded-full" />
+        <span className="absolute text-focusGray bg-primaryDark px-2 select-none">
+          OR
+        </span>
+      </span>
+
+      <Button
+        category="styled"
+        variant="filled"
+        rippleBg='gray'
+        sx={{
+          bg: 'bg-white',
+          color: 'text-black',
+          width: 'w-[10rem]',
+          display: 'flex justify-center items-center self-center gap-3',
+        }}
+      >
+        <FcGoogle className="text-2xl" /> Continue
+      </Button>
     </>
   );
 };
