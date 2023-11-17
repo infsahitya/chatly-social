@@ -1,6 +1,7 @@
 function __handleConsumers(
   e: React.MouseEvent,
   action: 'previous' | 'next',
+  totalConsumer: number,
   count: {
     state: number;
     stateHandler: React.Dispatch<React.SetStateAction<number>>;
@@ -9,11 +10,13 @@ function __handleConsumers(
   e.preventDefault();
   switch (action) {
     case 'next': {
-      return count.stateHandler((curr) => curr + 1);
+      if (count.state < totalConsumer - 1)
+        return count.stateHandler((curr) => curr + 1);
+      break;
     }
     case 'previous': {
-      if (count.state === 0) return alert('Reached Starting');
-      return count.stateHandler((curr) => curr - 1);
+      if (count.state > 0) return count.stateHandler((curr) => curr - 1);
+      break;
     }
   }
 }

@@ -1,9 +1,7 @@
-import { GoDotFill } from 'react-icons/go';
-import { Button } from '../../components/form';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import { NameEmail, PassConfirm } from './modules';
 import { useState } from 'react';
-import { handleConsumers } from './handlers';
+import { GoDotFill } from 'react-icons/go';
+import { FormActionBtn } from './components';
+import { NameEmail, PassConfirm } from './modules';
 
 const userDataConsumer = [NameEmail, PassConfirm];
 
@@ -25,49 +23,22 @@ const __signup = (): JSX.Element => {
         <ActiveConsumer />
 
         <div className="relative w-full flex items-center justify-between gap-5">
-          <Button
-            category="styled"
-            variant="filled"
-            className="group"
-            sx={{
-              bg: 'bg-focusGray',
-              color: 'text-textGray',
-              width: 'w-[50%]',
-              display: 'flex items-center justify-center',
+          <FormActionBtn
+            action="previous"
+            userDataConsumerLength={userDataConsumer.length}
+            renderCount={{
+              state: consumerRenderCount,
+              stateHandler: setConsumerRenderCount,
             }}
-            disabled={consumerRenderCount === 0}
-            onClick={(e) =>
-              handleConsumers(e, 'previous', {
-                state: consumerRenderCount,
-                stateHandler: setConsumerRenderCount,
-              })
-            }
-          >
-            <FaArrowLeft className="translate-x-[-0.4rem] group-hover:translate-x-[-0.6rem] text-sm transition-all duration-300" />
-            <span>Back</span>
-          </Button>
-
-          <Button
-            category="styled"
-            variant="filled"
-            className="group"
-            sx={{
-              bg: 'bg-primaryBlue',
-              color: 'text-textGray',
-              width: 'w-[50%]',
-              display: 'flex items-center justify-center',
+          />
+          <FormActionBtn
+            action="next"
+            userDataConsumerLength={userDataConsumer.length}
+            renderCount={{
+              state: consumerRenderCount,
+              stateHandler: setConsumerRenderCount,
             }}
-            disabled={consumerRenderCount === userDataConsumer.length - 1}
-            onClick={(e) =>
-              handleConsumers(e, 'next', {
-                state: consumerRenderCount,
-                stateHandler: setConsumerRenderCount,
-              })
-            }
-          >
-            <span>Next</span>
-            <FaArrowRight className="translate-x-[0.4rem] group-hover:translate-x-[0.6rem] text-sm transition-all duration-300" />
-          </Button>
+          />
         </div>
       </form>
     </>
