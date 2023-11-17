@@ -5,6 +5,7 @@ import { Ripple } from '../components';
 
 const __transparentBtn = ({
   children,
+  rippleBg,
   ...props
 }: TransparentBtnStyleProps): JSX.Element => {
   const { color, display, margin, textAlign, border, width, bg } = props.sx;
@@ -37,7 +38,7 @@ const __transparentBtn = ({
       className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${bg} ${props.className} disabled:cursor-not-allowed disabled:opacity-70`}
     >
       {children}
-      {ripple ? <Ripple coords={coords} /> : <></>}
+      {ripple ? <Ripple rippleBg={rippleBg} coords={coords} /> : <></>}
     </button>
   );
 };

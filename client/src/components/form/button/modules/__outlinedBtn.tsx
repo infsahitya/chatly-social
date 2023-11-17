@@ -5,6 +5,7 @@ import { RippleEffect } from '../utils';
 
 const __outlinedBtn = ({
   children,
+  rippleBg,
   ...props
 }: OutlinedBtnStyleProps): JSX.Element => {
   const { color, display, margin, textAlign, border, width } = props.sx;
@@ -38,7 +39,7 @@ const __outlinedBtn = ({
       className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${props.className} disabled:cursor-not-allowed disabled:opacity-70`}
     >
       {children}
-      {ripple ? <Ripple coords={coords} /> : <></>}
+      {ripple ? <Ripple rippleBg={rippleBg} coords={coords} /> : <></>}
     </button>
   );
 };

@@ -1,7 +1,8 @@
-import { GoDotFill } from 'react-icons/go';
-import { Button, Input } from '../../components/form';
-import { RiLockPasswordFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+import { GoDotFill } from 'react-icons/go';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import { Button, Input } from '../../components/form';
 
 const __login = (): JSX.Element => {
   return (
@@ -55,6 +56,26 @@ const __login = (): JSX.Element => {
           Login
         </Button>
       </form>
+
+      <span className="relative w-full flex items-center justify-center">
+        <hr className="relative h-[1px] w-full bg-focusGray border-none rounded-full" />
+        <span className="absolute text-focusGray bg-primaryDark px-2 select-none">
+          OR
+        </span>
+      </span>
+
+      <Button
+        category="styled"
+        variant="filled"
+        sx={{
+          bg: 'bg-white',
+          color: 'text-black',
+          width: 'w-[10rem]',
+          display: 'flex justify-center items-center self-center gap-3',
+        }}
+      >
+        <FcGoogle className="text-2xl" /> Continue
+      </Button>
     </>
   );
 };

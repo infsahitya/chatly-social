@@ -1,3 +1,10 @@
+type RippleBG = 'white' | 'black';
+
+interface RippleElProps {
+  rippleBg: RippleBG;
+  coords: { x: number; y: number };
+}
+
 interface ButtonCommonSXProps {
   width?: string;
   color?: string;
@@ -6,32 +13,41 @@ interface ButtonCommonSXProps {
   display?: string;
 }
 
-interface FilledBtnStyleProps extends React.ComponentProps<'button'> {
+interface ButtonCommonProps {
+  rippleBg: RippleBG;
+  children: React.ReactNode | React.ReactNode[];
+}
+
+interface FilledBtnStyleProps
+  extends React.ComponentProps<'button'>,
+    ButtonCommonProps {
   variant: 'filled';
   sx: { bg: string } & ButtonCommonSXProps;
-  children: React.ReactNode | React.ReactNode[];
 }
 
-interface OutlinedBtnStyleProps extends React.ComponentProps<'button'> {
+interface OutlinedBtnStyleProps
+  extends React.ComponentProps<'button'>,
+    ButtonCommonProps {
   variant: 'outlined';
   sx: { border: string } & ButtonCommonSXProps;
-  children: React.ReactNode | React.ReactNode[];
 }
 
-interface TransparentBtnStyleProps extends React.ComponentProps<'button'> {
+interface TransparentBtnStyleProps
+  extends React.ComponentProps<'button'>,
+    ButtonCommonProps {
   variant: 'transparent';
   sx: { border?: string; bg?: string } & ButtonCommonSXProps;
-  children: React.ReactNode | React.ReactNode[];
 }
 
-type CustomUnstyledButtonProps = {
+interface CustomUnstyledButtonProps
+  extends React.ComponentProps<'button'>,
+    Omit<ButtonCommonProps, 'rippleBg'> {
   category: 'unstyled';
   sx?: {
     bg?: string;
     border?: string;
   } & ButtonCommonSXProps;
-  children: React.ReactNode | React.ReactNode[];
-} & React.ComponentProps<'button'>;
+}
 
 type CustomStyledButtonProps = (
   | FilledBtnStyleProps

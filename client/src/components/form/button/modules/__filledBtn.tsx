@@ -5,6 +5,7 @@ import { Ripple } from '../components';
 
 const __filledBtn = ({
   children,
+  rippleBg,
   ...props
 }: FilledBtnStyleProps): JSX.Element => {
   const { color, display, margin, textAlign, bg, width } = props.sx;
@@ -38,7 +39,7 @@ const __filledBtn = ({
       className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${bg} ${width} ${props.className} disabled:cursor-not-allowed disabled:opacity-70`}
     >
       {children}
-      {ripple ? <Ripple coords={coords} /> : <></>}
+      {ripple ? <Ripple rippleBg={rippleBg} coords={coords} /> : <></>}
     </button>
   );
 };
