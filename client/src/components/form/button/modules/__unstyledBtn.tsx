@@ -1,7 +1,10 @@
-const __unstyledBtn = ({ ...props }: CustomButtonProps): JSX.Element => {
+const __unstyledBtn = ({
+  children,
+  ...props
+}: CustomButtonProps): JSX.Element => {
   return (
     <button {...props} className={`${props.sx?.color}`}>
-      {props.label}
+      {children}
     </button>
   );
 };
