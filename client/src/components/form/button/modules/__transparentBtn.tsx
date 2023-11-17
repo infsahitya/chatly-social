@@ -34,7 +34,7 @@ const __transparentBtn = ({
   return (
     <button
       {...props}
-      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${bg} ${props.className}`}
+      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${bg} ${props.className} disabled:cursor-not-allowed disabled:opacity-70`}
     >
       {children}
       {ripple ? <Ripple coords={coords} /> : <></>}

@@ -35,7 +35,7 @@ const __outlinedBtn = ({
     <button
       {...props}
       ref={btnRef}
-      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${props.className}`}
+      className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${props.className} disabled:cursor-not-allowed disabled:opacity-70`}
     >
       {children}
       {ripple ? <Ripple coords={coords} /> : <></>}
