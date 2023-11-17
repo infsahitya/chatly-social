@@ -3,8 +3,10 @@ import { StyledBtnSX } from '.';
 import { Ripple } from '../components';
 import { RippleEffect } from '../utils';
 
-const __outlinedBtn = ({ ...props }: OutlinedBtnStyleProps): JSX.Element => {
-  const { label } = props;
+const __outlinedBtn = ({
+  children,
+  ...props
+}: OutlinedBtnStyleProps): JSX.Element => {
   const { color, display, margin, textAlign, border, width } = props.sx;
 
   const [coords, setCoords] = useState({ x: -1, y: -1 });
@@ -35,7 +37,7 @@ const __outlinedBtn = ({ ...props }: OutlinedBtnStyleProps): JSX.Element => {
       ref={btnRef}
       className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${props.className}`}
     >
-      <span className="relative block z-10">{label}</span>
+      {children}
       {ripple ? <Ripple coords={coords} /> : <></>}
     </button>
   );

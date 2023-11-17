@@ -43,7 +43,6 @@ const __login = (): JSX.Element => {
         </Link>
 
         <Button
-          label={'Login'}
           category="styled"
           variant="filled"
           sx={{
@@ -52,7 +51,9 @@ const __login = (): JSX.Element => {
             width: 'w-[10rem]',
             display: 'self-center',
           }}
-        />
+        >
+          Login
+        </Button>
       </form>
     </>
   );

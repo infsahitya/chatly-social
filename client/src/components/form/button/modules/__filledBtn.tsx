@@ -3,8 +3,10 @@ import { StyledBtnSX } from '.';
 import { RippleEffect } from '../utils';
 import { Ripple } from '../components';
 
-const __filledBtn = ({ ...props }: FilledBtnStyleProps): JSX.Element => {
-  const { label } = props;
+const __filledBtn = ({
+  children,
+  ...props
+}: FilledBtnStyleProps): JSX.Element => {
   const { color, display, margin, textAlign, bg, width } = props.sx;
 
   const [coords, setCoords] = useState({ x: -1, y: -1 });
@@ -35,7 +37,7 @@ const __filledBtn = ({ ...props }: FilledBtnStyleProps): JSX.Element => {
       ref={btnRef}
       className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${bg} ${width} ${props.className}`}
     >
-      {label}
+      {children}
       {ripple ? <Ripple coords={coords} /> : <></>}
     </button>
   );

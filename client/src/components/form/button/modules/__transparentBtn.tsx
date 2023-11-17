@@ -4,9 +4,9 @@ import { RippleEffect } from '../utils';
 import { Ripple } from '../components';
 
 const __transparentBtn = ({
+  children,
   ...props
 }: TransparentBtnStyleProps): JSX.Element => {
-  const { label } = props;
   const { color, display, margin, textAlign, border, width, bg } = props.sx;
 
   const [coords, setCoords] = useState({ x: -1, y: -1 });
@@ -36,7 +36,7 @@ const __transparentBtn = ({
       {...props}
       className={`${StyledBtnSX} ${color} ${display} ${margin} ${textAlign} ${border} ${width} ${bg} ${props.className}`}
     >
-      <span className="relative block z-10">{label}</span>
+      {children}
       {ripple ? <Ripple coords={coords} /> : <></>}
     </button>
   );

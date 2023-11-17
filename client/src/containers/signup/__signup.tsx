@@ -26,12 +26,6 @@ const __signup = (): JSX.Element => {
 
         <div className="relative w-full flex items-center justify-between gap-5">
           <Button
-            label={
-              <>
-                <FaArrowLeft className="translate-x-[-0.4rem] group-hover:translate-x-[-0.6rem] text-sm transition-all duration-300" />
-                <span>Back</span>
-              </>
-            }
             category="styled"
             variant="filled"
             className="group"
@@ -43,20 +37,17 @@ const __signup = (): JSX.Element => {
             }}
             disabled={consumerRenderCount === 0}
             onClick={(e) =>
-              handleConsumers(e, 'previous', userDataConsumer.length, {
+              handleConsumers(e, 'previous', {
                 state: consumerRenderCount,
                 stateHandler: setConsumerRenderCount,
               })
             }
-          />
+          >
+            <FaArrowLeft className="translate-x-[-0.4rem] group-hover:translate-x-[-0.6rem] text-sm transition-all duration-300" />
+            <span>Back</span>
+          </Button>
 
           <Button
-            label={
-              <>
-                <span>Next</span>
-                <FaArrowRight className="translate-x-[0.4rem] group-hover:translate-x-[0.6rem] text-sm transition-all duration-300" />
-              </>
-            }
             category="styled"
             variant="filled"
             className="group"
@@ -68,12 +59,15 @@ const __signup = (): JSX.Element => {
             }}
             disabled={consumerRenderCount === userDataConsumer.length - 1}
             onClick={(e) =>
-              handleConsumers(e, 'next', userDataConsumer.length, {
+              handleConsumers(e, 'next', {
                 state: consumerRenderCount,
                 stateHandler: setConsumerRenderCount,
               })
             }
-          />
+          >
+            <span>Next</span>
+            <FaArrowRight className="translate-x-[0.4rem] group-hover:translate-x-[0.6rem] text-sm transition-all duration-300" />
+          </Button>
         </div>
       </form>
     </>

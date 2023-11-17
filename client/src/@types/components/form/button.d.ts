@@ -7,30 +7,30 @@ interface ButtonCommonSXProps {
 }
 
 interface FilledBtnStyleProps extends React.ComponentProps<'button'> {
-  label: React.ReactNode;
   variant: 'filled';
   sx: { bg: string } & ButtonCommonSXProps;
+  children: React.ReactNode | React.ReactNode[];
 }
 
 interface OutlinedBtnStyleProps extends React.ComponentProps<'button'> {
-  label: React.ReactNode;
   variant: 'outlined';
   sx: { border: string } & ButtonCommonSXProps;
+  children: React.ReactNode | React.ReactNode[];
 }
 
 interface TransparentBtnStyleProps extends React.ComponentProps<'button'> {
-  label: React.ReactNode;
   variant: 'transparent';
   sx: { border?: string; bg?: string } & ButtonCommonSXProps;
+  children: React.ReactNode | React.ReactNode[];
 }
 
 type CustomUnstyledButtonProps = {
   category: 'unstyled';
-  label: React.ReactNode;
   sx?: {
     bg?: string;
     border?: string;
   } & ButtonCommonSXProps;
+  children: React.ReactNode | React.ReactNode[];
 } & React.ComponentProps<'button'>;
 
 type CustomStyledButtonProps = (
