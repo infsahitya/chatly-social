@@ -2,15 +2,14 @@ import { GoDotFill } from 'react-icons/go';
 import { Button } from '../../components/form';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { NameEmail, PassConfirm } from './modules';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { handleConsumers } from './handlers';
+
+const userDataConsumer = [NameEmail, PassConfirm];
 
 const __signup = (): JSX.Element => {
   const [consumerRenderCount, setConsumerRenderCount] = useState<number>(0);
-  const userDataConsumer = useRef<JSX.Element[]>([
-    <NameEmail />,
-    <PassConfirm />,
-  ]);
+  const ActiveConsumer = userDataConsumer[consumerRenderCount];
 
   return (
     <>
@@ -23,13 +22,13 @@ const __signup = (): JSX.Element => {
         onSubmit={(e) => e.preventDefault()}
         className="relative w-full flex flex-col items-start justify-center gap-4"
       >
-        {userDataConsumer.current[consumerRenderCount]}
+        <ActiveConsumer />
 
         <div className="relative w-full flex items-center justify-between gap-5">
           <Button
             label={
               <>
-                <FaArrowLeft className="translate-x-[-2] group-hover:translate-x-[-3] text-sm transition-all duration-300" />
+                <FaArrowLeft className="translate-x-[-0.4rem] group-hover:translate-x-[-0.6rem] text-sm transition-all duration-300" />
                 <span>Back</span>
               </>
             }
@@ -40,10 +39,11 @@ const __signup = (): JSX.Element => {
               bg: 'bg-focusGray',
               color: 'text-textGray',
               width: 'w-[50%]',
-              display: 'flex items-center justify-center self-center',
+              display: 'flex items-center justify-center',
             }}
+            disabled={consumerRenderCount === 0}
             onClick={(e) =>
-              handleConsumers(e, 'previous', userDataConsumer.current.length, {
+              handleConsumers(e, 'previous', userDataConsumer.length, {
                 state: consumerRenderCount,
                 stateHandler: setConsumerRenderCount,
               })
@@ -54,7 +54,7 @@ const __signup = (): JSX.Element => {
             label={
               <>
                 <span>Next</span>
-                <FaArrowRight className="translate-x-2 group-hover:translate-x-3 text-sm transition-all duration-300" />
+                <FaArrowRight className="translate-x-[0.4rem] group-hover:translate-x-[0.6rem] text-sm transition-all duration-300" />
               </>
             }
             category="styled"
@@ -64,10 +64,11 @@ const __signup = (): JSX.Element => {
               bg: 'bg-primaryBlue',
               color: 'text-textGray',
               width: 'w-[50%]',
-              display: 'flex items-center justify-center self-center',
+              display: 'flex items-center justify-center',
             }}
+            disabled={consumerRenderCount === userDataConsumer.length - 1}
             onClick={(e) =>
-              handleConsumers(e, 'next', userDataConsumer.current.length, {
+              handleConsumers(e, 'next', userDataConsumer.length, {
                 state: consumerRenderCount,
                 stateHandler: setConsumerRenderCount,
               })
