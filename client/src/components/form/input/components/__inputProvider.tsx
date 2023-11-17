@@ -1,9 +1,16 @@
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { handleInputBlur, handleInputFocus } from '../handlers';
 
 const __inputProvider = forwardRef<HTMLInputElement, InputProviderProps>(
   (props, ref): JSX.Element => {
     const { type, labelRef, wrapperRef } = props;
+
+    useEffect(() => {
+      if (props.value?.toString()) {
+        labelRef.current!.style.transform = 'translateY(0)';
+        labelRef.current!.style.fontSize = '0.8rem';
+      }
+    }, []);
 
     return (
       <input

@@ -16,7 +16,7 @@ const __formActionBtn = ({
 }): JSX.Element => {
   return (
     <Button
-      rippleBg='white'
+      rippleBg="white"
       category="styled"
       variant="filled"
       className="group"

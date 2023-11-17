@@ -5,11 +5,16 @@ import { NameEmail, PassConfirm } from './modules';
 import { Button } from '../../components/form';
 import { FcGoogle } from 'react-icons/fc';
 
-const userDataConsumer = [NameEmail, PassConfirm];
+const userDataConsumer = [NameEmail, PassConfirm] as const;
 
 const __signup = (): JSX.Element => {
   const [consumerRenderCount, setConsumerRenderCount] = useState<number>(0);
-  const ActiveConsumer = userDataConsumer[consumerRenderCount];
+  const [signupData, setSignupData] = useState<SignupDataProps>({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
 
   return (
     <>
@@ -22,7 +27,20 @@ const __signup = (): JSX.Element => {
         onSubmit={(e) => e.preventDefault()}
         className="relative w-full flex flex-col items-start justify-center gap-4"
       >
-        <ActiveConsumer />
+        {consumerRenderCount === 0 ? (
+          <NameEmail
+            state={{ name: signupData.name, email: signupData.email }}
+            stateHandler={setSignupData}
+          />
+        ) : (
+          <PassConfirm
+            state={{
+              password: signupData.password,
+              confirmPassword: signupData.confirmPassword,
+            }}
+            stateHandler={setSignupData}
+          />
+        )}
 
         <div className="relative w-full flex items-center justify-between gap-5">
           <FormActionBtn
@@ -54,7 +72,7 @@ const __signup = (): JSX.Element => {
       <Button
         category="styled"
         variant="filled"
-        rippleBg='gray'
+        rippleBg="gray"
         sx={{
           bg: 'bg-white',
           color: 'text-black',

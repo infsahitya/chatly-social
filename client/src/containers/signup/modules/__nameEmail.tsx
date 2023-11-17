@@ -1,7 +1,10 @@
 import { HiUser } from 'react-icons/hi2';
 import { Input } from '../../../components/form';
+import { handleInputChange } from '../handlers';
 
-const __nameEmail = () => {
+const __nameEmail = ({ state, stateHandler }: NameEmailProps) => {
+  const { name, email } = state;
+
   return (
     <div
       className={`relative w-full opacity-0 animate-signupConsumerMount flex flex-col items-start justify-center gap-4`}
@@ -14,6 +17,8 @@ const __nameEmail = () => {
         required
         icon={<HiUser />}
         sx={{ width: 'w-full' }}
+        value={name}
+        onChange={(e) => handleInputChange(e, stateHandler)}
       />
 
       <Input
@@ -24,6 +29,8 @@ const __nameEmail = () => {
         required
         icon={<span>@</span>}
         sx={{ width: 'w-full' }}
+        value={email}
+        onChange={(e) => handleInputChange(e, stateHandler)}
       />
     </div>
   );
