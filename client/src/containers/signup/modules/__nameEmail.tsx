@@ -1,9 +1,22 @@
 import { HiUser } from 'react-icons/hi2';
 import { Input } from '../../../components/form';
+import { useEffect, useState } from 'react';
 
 const __nameEmail = () => {
+  const [mount, isMount] = useState<boolean>(false);
+
+  useEffect(() => {
+    isMount(true);
+  }, []);
+
   return (
-    <>
+    <div
+      className={`relative w-full ${
+        mount
+          ? 'opacity-0 animate-signupConsumerMount'
+          : 'opacity-1 animate-signupConsumerUnmount'
+      } flex flex-col items-start justify-center gap-4`}
+    >
       <Input
         type="text"
         label="Name"
@@ -23,7 +36,7 @@ const __nameEmail = () => {
         icon={<span>@</span>}
         sx={{ width: 'w-full' }}
       />
-    </>
+    </div>
   );
 };
 

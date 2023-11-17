@@ -23,9 +23,19 @@ export default {
             background: 'transparent',
           },
         },
+        signupConsumerMount: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        signupConsumerUnmount: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
       },
       animation: {
         button_ripple: 'button_ripple 0.7s ease forwards',
+        signupConsumerMount: 'signupConsumerMount 1s ease forwards',
+        signupConsumerUnmount: 'signupConsumerUnmount 1s ease forwards',
       },
     },
   },
