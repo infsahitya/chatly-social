@@ -16,11 +16,10 @@ export default {
       },
       keyframes: {
         button_ripple: {
-          '0%': { opacity: 1, transform: 'scale(0)', background: '#ffffff' },
+          '0%': { opacity: 1, transform: 'scale(0)' },
           '100%': {
             opacity: 0,
             transform: 'scale(50)',
-            background: 'transparent',
           },
         },
         signupConsumerMount: {

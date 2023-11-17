@@ -1,4 +1,4 @@
-type RippleBG = 'white' | 'black';
+type RippleBG = 'white' | 'gray';
 
 interface RippleElProps {
   rippleBg: RippleBG;

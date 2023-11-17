@@ -46,6 +46,7 @@ const __login = (): JSX.Element => {
         <Button
           category="styled"
           variant="filled"
+          rippleBg='white'
           sx={{
             bg: 'bg-primaryBlue',
             color: 'text-textGray',
@@ -67,6 +68,7 @@ const __login = (): JSX.Element => {
       <Button
         category="styled"
         variant="filled"
+        rippleBg='gray'
         sx={{
           bg: 'bg-white',
           color: 'text-black',
