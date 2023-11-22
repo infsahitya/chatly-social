@@ -4,6 +4,7 @@ import { FormActionBtn } from "./components";
 import { NameEmail, PassConfirm } from "./modules";
 import { Button } from "../../components/form";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const userDataConsumer = [NameEmail, PassConfirm] as const;
 
@@ -69,19 +70,25 @@ const __signup = (): JSX.Element => {
         </span>
       </span>
 
-      <Button
-        category="styled"
-        variant="filled"
-        rippleBg="gray"
-        sx={{
-          bg: "bg-white",
-          color: "text-black",
-          width: "w-[10rem]",
-          display: "flex justify-center items-center self-center gap-3",
-        }}
+      <Link
+        to={"http://localhost:3000/auth/google/callback"}
+        target="_blank"
+        className="self-center"
       >
-        <FcGoogle className="text-2xl" /> Continue
-      </Button>
+        <Button
+          category="styled"
+          variant="filled"
+          rippleBg="gray"
+          sx={{
+            bg: "bg-white",
+            color: "text-black",
+            width: "w-[10rem]",
+            display: "flex justify-center items-center self-center gap-3",
+          }}
+        >
+          <FcGoogle className="text-2xl" /> Continue
+        </Button>
+      </Link>
     </>
   );
 };
