@@ -8,7 +8,7 @@ import {
 } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { Request, Response } from "express";
-import { GoogleGuard } from "./guard";
+import { CheckGoogleTokenExpiryGuard, GoogleGuard } from "./guard";
 import { GoogleDTO } from "./dto";
 
 @Controller("auth")
