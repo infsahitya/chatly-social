@@ -1,3 +1,3 @@
-import __handleTabIndicator from './__handleTabIndicator';
+import __handleTabIndicator from "./__handleTabIndicator";
 
 export { __handleTabIndicator as handleTabIndicator };

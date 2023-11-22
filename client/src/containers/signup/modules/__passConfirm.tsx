@@ -1,6 +1,6 @@
-import { Input } from '../../../components/form';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { handleInputChange } from '../handlers';
+import { Input } from "../../../components/form";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { handleInputChange } from "../handlers";
 
 const __passConfirm = ({ state, stateHandler }: PassConfirmProps) => {
   const { password, confirmPassword } = state;
@@ -16,7 +16,7 @@ const __passConfirm = ({ state, stateHandler }: PassConfirmProps) => {
         id="password"
         required
         icon={<RiLockPasswordFill />}
-        sx={{ width: 'w-full' }}
+        sx={{ width: "w-full" }}
         value={password}
         onChange={(e) => handleInputChange(e, stateHandler)}
       />
@@ -28,7 +28,7 @@ const __passConfirm = ({ state, stateHandler }: PassConfirmProps) => {
         id="confirmPassword"
         required
         icon={<RiLockPasswordFill />}
-        sx={{ width: 'w-full' }}
+        sx={{ width: "w-full" }}
         value={confirmPassword}
         onChange={(e) => handleInputChange(e, stateHandler)}
       />

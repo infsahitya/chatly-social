@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { AuthTabProps } from '../../../@types/layouts/welcomeUser';
+import { NavLink } from "react-router-dom";
+import { AuthTabProps } from "../../../@types/layouts/welcomeUser";
 
 const __tab = ({ children, to, ...props }: AuthTabProps): JSX.Element => {
   return (

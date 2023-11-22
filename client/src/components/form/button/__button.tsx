@@ -1,16 +1,16 @@
-import { FilledBtn, OutlinedBtn, TransparentBtn, UnstyledBtn } from './modules';
+import { FilledBtn, OutlinedBtn, TransparentBtn, UnstyledBtn } from "./modules";
 
 const __button = ({ ...props }: CustomButtonProps): JSX.Element => {
   switch (props.category) {
-    case 'unstyled':
+    case "unstyled":
       return <UnstyledBtn {...props} />;
-    case 'styled': {
+    case "styled": {
       switch (props.variant) {
-        case 'filled':
+        case "filled":
           return <FilledBtn {...props} />;
-        case 'outlined':
+        case "outlined":
           return <OutlinedBtn {...props} />;
-        case 'transparent':
+        case "transparent":
           return <TransparentBtn {...props} />;
       }
     }

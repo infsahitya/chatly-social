@@ -1,5 +1,5 @@
-import { TbBrandTwitterFilled } from 'react-icons/tb';
-import { appName } from '../../../data/constants';
+import { TbBrandTwitterFilled } from "react-icons/tb";
+import { appName } from "../../../data/constants";
 
 const __brandHeader = (): JSX.Element => {
   return (

@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { StyledBtnSX } from '.';
-import { Ripple } from '../components';
-import { RippleEffect } from '../utils';
+import { useEffect, useRef, useState } from "react";
+import { StyledBtnSX } from ".";
+import { Ripple } from "../components";
+import { RippleEffect } from "../utils";
 
 const __outlinedBtn = ({
   children,
@@ -18,11 +18,11 @@ const __outlinedBtn = ({
   useEffect(() => {
     const btnEl = btnRef.current;
 
-    btnEl.addEventListener('click', (e) =>
+    btnEl.addEventListener("click", (e) =>
       RippleEffect(e, setCoords, setRipple),
     );
     return () => {
-      btnEl.removeEventListener('click', (e) =>
+      btnEl.removeEventListener("click", (e) =>
         RippleEffect(e, setCoords, setRipple),
       );
     };

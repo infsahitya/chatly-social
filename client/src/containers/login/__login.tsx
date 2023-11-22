@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
-import { GoDotFill } from 'react-icons/go';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { Button, Input } from '../../components/form';
+import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { GoDotFill } from "react-icons/go";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { Button, Input } from "../../components/form";
 
 const __login = (): JSX.Element => {
   return (
@@ -23,7 +23,7 @@ const __login = (): JSX.Element => {
           id="email"
           required
           icon={<span>@</span>}
-          sx={{ width: 'w-full' }}
+          sx={{ width: "w-full" }}
         />
 
         <Input
@@ -33,11 +33,11 @@ const __login = (): JSX.Element => {
           id="password"
           required
           icon={<RiLockPasswordFill />}
-          sx={{ width: 'w-full' }}
+          sx={{ width: "w-full" }}
         />
 
         <Link
-          to={'/forgot-password'}
+          to={"/forgot-password"}
           className="text-primaryBlue text-sm hover:underline ml-2"
         >
           Forgot Password?
@@ -48,13 +48,13 @@ const __login = (): JSX.Element => {
           variant="filled"
           rippleBg="white"
           sx={{
-            bg: 'bg-primaryBlue',
-            color: 'text-textGray',
-            width: 'w-[10rem]',
-            display: 'self-center',
+            bg: "bg-primaryBlue",
+            color: "text-textGray",
+            width: "w-[10rem]",
+            display: "self-center",
           }}
           onClick={(e) => {
-            console.log('Clicked Login btn');
+            console.log("Clicked Login btn");
           }}
         >
           Login
@@ -73,10 +73,10 @@ const __login = (): JSX.Element => {
         variant="filled"
         rippleBg="gray"
         sx={{
-          bg: 'bg-white',
-          color: 'text-black',
-          width: 'w-[10rem]',
-          display: 'flex justify-center items-center self-center gap-3',
+          bg: "bg-white",
+          color: "text-black",
+          width: "w-[10rem]",
+          display: "flex justify-center items-center self-center gap-3",
         }}
       >
         <FcGoogle className="text-2xl" /> Continue

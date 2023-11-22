@@ -1,13 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 import {
   InnerWrapper,
   InputIcon,
   InputLabel,
   InputProvider,
   ParentWrapper,
-} from '../components';
-import { Button } from '../..';
-import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
+} from "../components";
+import { Button } from "../..";
+import { HiMiniEyeSlash, HiMiniEye } from "react-icons/hi2";
 
 const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
   const { icon, label, sx } = props;
@@ -26,7 +26,7 @@ const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
         <InputProvider
           {...props}
           ref={inputRef}
-          type={showPass ? 'text' : 'password'}
+          type={showPass ? "text" : "password"}
           labelRef={labelRef}
           wrapperRef={wrapperRef}
         />
@@ -37,7 +37,7 @@ const __passwordInput = ({ ...props }: CustomInputProps): JSX.Element => {
           e.preventDefault();
           setShowPass((curr) => !curr);
         }}
-        sx={{ color: 'text-textGray' }}
+        sx={{ color: "text-textGray" }}
       >
         {showPass ? (
           <HiMiniEyeSlash className="text-gray-400" />

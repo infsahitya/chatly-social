@@ -1,3 +1,3 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 interface AuthTabProps extends React.ComponentProps<typeof NavLink> {}

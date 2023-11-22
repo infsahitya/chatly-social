@@ -1,11 +1,11 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import {
   InnerWrapper,
   InputIcon,
   InputLabel,
   InputProvider,
   ParentWrapper,
-} from '../components';
+} from "../components";
 
 const __textInput = ({ ...props }: CustomInputProps): JSX.Element => {
   const { icon, label, sx } = props;

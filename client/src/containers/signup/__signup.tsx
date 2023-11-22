@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { GoDotFill } from 'react-icons/go';
-import { FormActionBtn } from './components';
-import { NameEmail, PassConfirm } from './modules';
-import { Button } from '../../components/form';
-import { FcGoogle } from 'react-icons/fc';
+import { useState } from "react";
+import { GoDotFill } from "react-icons/go";
+import { FormActionBtn } from "./components";
+import { NameEmail, PassConfirm } from "./modules";
+import { Button } from "../../components/form";
+import { FcGoogle } from "react-icons/fc";
 
 const userDataConsumer = [NameEmail, PassConfirm] as const;
 
 const __signup = (): JSX.Element => {
   const [consumerRenderCount, setConsumerRenderCount] = useState<number>(0);
   const [signupData, setSignupData] = useState<SignupDataProps>({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   return (
@@ -74,10 +74,10 @@ const __signup = (): JSX.Element => {
         variant="filled"
         rippleBg="gray"
         sx={{
-          bg: 'bg-white',
-          color: 'text-black',
-          width: 'w-[10rem]',
-          display: 'flex justify-center items-center self-center gap-3',
+          bg: "bg-white",
+          color: "text-black",
+          width: "w-[10rem]",
+          display: "flex justify-center items-center self-center gap-3",
         }}
       >
         <FcGoogle className="text-2xl" /> Continue

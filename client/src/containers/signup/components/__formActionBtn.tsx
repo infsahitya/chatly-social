@@ -1,13 +1,13 @@
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { handleConsumer } from '../handlers';
-import { Button } from '../../../components/form';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { handleConsumer } from "../handlers";
+import { Button } from "../../../components/form";
 
 const __formActionBtn = ({
   action,
   userDataConsumerLength,
   renderCount,
 }: {
-  action: 'next' | 'previous';
+  action: "next" | "previous";
   userDataConsumerLength: number;
   renderCount: {
     state: number;
@@ -21,13 +21,13 @@ const __formActionBtn = ({
       variant="filled"
       className="group"
       sx={{
-        bg: action === 'previous' ? 'bg-focusGray' : 'bg-primaryBlue',
-        color: 'text-textGray',
-        width: 'w-[50%]',
-        display: 'flex items-center justify-center',
+        bg: action === "previous" ? "bg-focusGray" : "bg-primaryBlue",
+        color: "text-textGray",
+        width: "w-[50%]",
+        display: "flex items-center justify-center",
       }}
       disabled={
-        action === 'previous'
+        action === "previous"
           ? renderCount.state === 0
           : renderCount.state === userDataConsumerLength - 1
       }
@@ -35,7 +35,7 @@ const __formActionBtn = ({
         handleConsumer(e, action, userDataConsumerLength, renderCount)
       }
     >
-      {action === 'previous' ? (
+      {action === "previous" ? (
         <>
           <FaArrowLeft className="translate-x-[-0.4rem] group-hover:translate-x-[-0.6rem] text-sm transition-all duration-300" />
           <span>Back</span>

@@ -1,5 +1,5 @@
-import { forwardRef, useEffect } from 'react';
-import { handleInputBlur, handleInputFocus } from '../handlers';
+import { forwardRef, useEffect } from "react";
+import { handleInputBlur, handleInputFocus } from "../handlers";
 
 const __inputProvider = forwardRef<HTMLInputElement, InputProviderProps>(
   (props, ref): JSX.Element => {
@@ -7,8 +7,8 @@ const __inputProvider = forwardRef<HTMLInputElement, InputProviderProps>(
 
     useEffect(() => {
       if (props.value?.toString()) {
-        labelRef.current!.style.transform = 'translateY(0)';
-        labelRef.current!.style.fontSize = '0.8rem';
+        labelRef.current!.style.transform = "translateY(0)";
+        labelRef.current!.style.fontSize = "0.8rem";
       }
     }, []);
 
@@ -18,13 +18,13 @@ const __inputProvider = forwardRef<HTMLInputElement, InputProviderProps>(
         ref={ref}
         type={type}
         inputMode={
-          type === 'email'
-            ? 'email'
-            : type === 'text'
-            ? 'text'
-            : type === 'number'
-            ? 'numeric'
-            : 'text'
+          type === "email"
+            ? "email"
+            : type === "text"
+            ? "text"
+            : type === "number"
+            ? "numeric"
+            : "text"
         }
         onFocus={() => handleInputFocus(labelRef, wrapperRef)}
         onBlur={(e) => handleInputBlur(e, labelRef, wrapperRef)}

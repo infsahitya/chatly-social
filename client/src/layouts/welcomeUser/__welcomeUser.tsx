@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom';
-import { BrandHeader, TabsWrapper } from './modules';
+import { Outlet } from "react-router-dom";
+import { BrandHeader, TabsWrapper } from "./modules";
 
 const __welcomeUser = (): JSX.Element => {
   return (

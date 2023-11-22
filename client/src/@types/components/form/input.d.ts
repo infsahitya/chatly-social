@@ -24,12 +24,12 @@ interface InputLabelProps {
 interface InputProviderProps extends CustomInputProps {
   labelRef: React.MutableRefObject<HTMLLabelElement>;
   wrapperRef: React.MutableRefObject<HTMLDivElement>;
-  type: CustomInputProps['type'];
+  type: CustomInputProps["type"];
 }
 
 interface CustomInputProps
-  extends Omit<React.ComponentProps<'input'>, 'placeholder'> {
-  type: 'text' | 'password' | 'email' | 'number';
+  extends Omit<React.ComponentProps<"input">, "placeholder"> {
+  type: "text" | "password" | "email" | "number";
   icon: ReactElement<any, any>;
   label: string;
   sx?: InputSXProps;

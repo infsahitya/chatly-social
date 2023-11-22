@@ -1,5 +1,5 @@
-import { forwardRef } from 'react';
-import { handleWrapperClick } from '../handlers';
+import { forwardRef } from "react";
+import { handleWrapperClick } from "../handlers";
 
 const __parentWrapper = forwardRef<HTMLDivElement, InputParentWrapperProps>(
   (props, ref) => {

@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
 
 const __inputLabel = forwardRef<HTMLLabelElement, InputLabelProps>(
   (props, ref) => {

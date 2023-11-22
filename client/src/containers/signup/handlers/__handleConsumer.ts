@@ -1,6 +1,6 @@
 function __handleConsumer(
   e: React.MouseEvent,
-  action: 'previous' | 'next',
+  action: "previous" | "next",
   totalConsumer: number,
   count: {
     state: number;
@@ -9,12 +9,12 @@ function __handleConsumer(
 ) {
   e.preventDefault();
   switch (action) {
-    case 'next': {
+    case "next": {
       if (count.state < totalConsumer - 1)
         return count.stateHandler((curr) => curr + 1);
       break;
     }
-    case 'previous': {
+    case "previous": {
       if (count.state > 0) return count.stateHandler((curr) => curr - 1);
       break;
     }
