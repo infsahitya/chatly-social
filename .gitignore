@@ -2,6 +2,11 @@
 server/dist
 server/node_modules
 
+
+# environment variables
+server/.env
+server/.env.test
+
 # Logs
 server/logs
 server/*.log
