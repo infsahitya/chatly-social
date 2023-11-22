@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { ForbiddenException, Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import HTTP from "src/http";
 
@@ -12,7 +12,7 @@ export class AuthService {
         "https://accounts.google.com/o/oauth2/token",
         {
           headers: {
-            "Content-type": "application/json; charset=utf-8",
+            "Content-type": "application/json",
           },
           body: JSON.stringify({
             client_id: this.config.get("GOOGLE_CLIENT_ID"),
@@ -23,9 +23,9 @@ export class AuthService {
         },
       );
 
-      return response.data.access_token;
+      return response.access_token;
     } catch (error) {
-      throw new Error("Failed to refresh the access token");
+      throw new ForbiddenException(error);
     }
   }
 

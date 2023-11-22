@@ -53,7 +53,7 @@ const __login = (): JSX.Element => {
             width: "w-[10rem]",
             display: "self-center",
           }}
-          onClick={(e) => {
+          onClick={() => {
             console.log("Clicked Login btn");
           }}
         >
@@ -68,19 +68,25 @@ const __login = (): JSX.Element => {
         </span>
       </span>
 
-      <Button
-        category="styled"
-        variant="filled"
-        rippleBg="gray"
-        sx={{
-          bg: "bg-white",
-          color: "text-black",
-          width: "w-[10rem]",
-          display: "flex justify-center items-center self-center gap-3",
-        }}
+      <Link
+        to={"http://localhost:3000/auth/google/callback"}
+        target="_blank"
+        className="self-center"
       >
-        <FcGoogle className="text-2xl" /> Continue
-      </Button>
+        <Button
+          category="styled"
+          variant="filled"
+          rippleBg="gray"
+          sx={{
+            bg: "bg-white",
+            color: "text-black",
+            width: "w-[10rem]",
+            display: "flex justify-center items-center gap-3",
+          }}
+        >
+          <FcGoogle className="text-2xl" /> Google
+        </Button>
+      </Link>
     </>
   );
 };

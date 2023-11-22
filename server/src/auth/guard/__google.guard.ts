@@ -41,7 +41,7 @@ export class __checkGoogleTokenExpiryGuard implements CanActivate {
 
         request.cookies["google_access_token"] = newGoogleAccessToken;
       } catch (error) {
-        throw new ForbiddenException(`Failed to refresh token ${error}`);
+        throw new ForbiddenException(`${error}`);
       }
     }
 

@@ -38,7 +38,7 @@ export class AuthController {
     if (!googleAccessToken)
       throw new UnauthorizedException("No access token found");
 
-    return (await this.authService.getProfile(googleAccessToken)).data;
+    return await this.authService.getProfile(googleAccessToken);
   }
 
   @Get("logout")

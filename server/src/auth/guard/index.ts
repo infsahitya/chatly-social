@@ -1,5 +1,5 @@
-import { __googleGuard } from "./__googe.guard";
-import { __checkGoogleTokenExpiryGuard } from "./__googe.guard";
+import { __googleGuard } from "./__google.guard";
+import { __checkGoogleTokenExpiryGuard } from "./__google.guard";
 
 export {
   __googleGuard as GoogleGuard,

@@ -38,6 +38,8 @@ export class __googleStrategy extends PassportStrategy(Strategy, "google") {
       refreshToken,
     };
 
+    console.log(user);
+
     done(null, user);
   }
 }
