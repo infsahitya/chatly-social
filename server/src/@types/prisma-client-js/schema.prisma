@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output = "../src/@types/prisma-client-js"
+  output   = "../src/@types/prisma-client-js"
 }
 
 datasource db {
@@ -17,6 +17,8 @@ model User {
   secondaryEmail String?  @unique
   hashPass       String
   posts          Post[]
+
+  @@map("users")
 }
 
 model Post {
@@ -25,4 +27,6 @@ model Post {
   updatedAt DateTime @default(now())
   user      User     @relation(fields: [userID], references: [id])
   userID    String   @db.ObjectId
+
+  @@map("posts")
 }

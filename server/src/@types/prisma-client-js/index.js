@@ -1,3 +1,4 @@
+
 Object.defineProperty(exports, "__esModule", { value: true });
 
 const {
@@ -20,12 +21,13 @@ const {
   warnOnce,
   defineDmmfProperty,
   Public,
-} = require("./runtime/library");
+} = require('./runtime/library')
 
-const Prisma = {};
 
-exports.Prisma = Prisma;
-exports.$Enums = {};
+const Prisma = {}
+
+exports.Prisma = Prisma
+exports.$Enums = {}
 
 /**
  * Prisma Client JS version: 5.6.0
@@ -33,179 +35,169 @@ exports.$Enums = {};
  */
 Prisma.prismaVersion = {
   client: "5.6.0",
-  engine: "e95e739751f42d8ca026f6b910f5a2dc5adeaeee",
-};
+  engine: "e95e739751f42d8ca026f6b910f5a2dc5adeaeee"
+}
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
-Prisma.PrismaClientUnknownRequestError = PrismaClientUnknownRequestError;
-Prisma.PrismaClientRustPanicError = PrismaClientRustPanicError;
-Prisma.PrismaClientInitializationError = PrismaClientInitializationError;
-Prisma.PrismaClientValidationError = PrismaClientValidationError;
-Prisma.NotFoundError = NotFoundError;
-Prisma.Decimal = Decimal;
+Prisma.PrismaClientUnknownRequestError = PrismaClientUnknownRequestError
+Prisma.PrismaClientRustPanicError = PrismaClientRustPanicError
+Prisma.PrismaClientInitializationError = PrismaClientInitializationError
+Prisma.PrismaClientValidationError = PrismaClientValidationError
+Prisma.NotFoundError = NotFoundError
+Prisma.Decimal = Decimal
 
 /**
  * Re-export of sql-template-tag
  */
-Prisma.sql = sqltag;
-Prisma.empty = empty;
-Prisma.join = join;
-Prisma.raw = raw;
-Prisma.validator = Public.validator;
+Prisma.sql = sqltag
+Prisma.empty = empty
+Prisma.join = join
+Prisma.raw = raw
+Prisma.validator = Public.validator
 
 /**
- * Extensions
- */
-Prisma.getExtensionContext = Extensions.getExtensionContext;
-Prisma.defineExtension = Extensions.defineExtension;
+* Extensions
+*/
+Prisma.getExtensionContext = Extensions.getExtensionContext
+Prisma.defineExtension = Extensions.defineExtension
 
 /**
  * Shorthand utilities for JSON filtering
  */
-Prisma.DbNull = objectEnumValues.instances.DbNull;
-Prisma.JsonNull = objectEnumValues.instances.JsonNull;
-Prisma.AnyNull = objectEnumValues.instances.AnyNull;
+Prisma.DbNull = objectEnumValues.instances.DbNull
+Prisma.JsonNull = objectEnumValues.instances.JsonNull
+Prisma.AnyNull = objectEnumValues.instances.AnyNull
 
 Prisma.NullTypes = {
   DbNull: objectEnumValues.classes.DbNull,
   JsonNull: objectEnumValues.classes.JsonNull,
-  AnyNull: objectEnumValues.classes.AnyNull,
-};
+  AnyNull: objectEnumValues.classes.AnyNull
+}
 
-const path = require("path");
+
+  const path = require('path')
 
 /**
  * Enums
  */
 exports.Prisma.UserScalarFieldEnum = {
-  id: "id",
-  createdAt: "createdAt",
-  firstName: "firstName",
-  lastName: "lastName",
-  primaryEmail: "primaryEmail",
-  secondaryEmail: "secondaryEmail",
-  hashPass: "hashPass",
+  id: 'id',
+  createdAt: 'createdAt',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  primaryEmail: 'primaryEmail',
+  secondaryEmail: 'secondaryEmail',
+  hashPass: 'hashPass'
 };
 
 exports.Prisma.PostScalarFieldEnum = {
-  id: "id",
-  createdAt: "createdAt",
-  updatedAt: "updatedAt",
-  userID: "userID",
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userID: 'userID'
 };
 
 exports.Prisma.SortOrder = {
-  asc: "asc",
-  desc: "desc",
+  asc: 'asc',
+  desc: 'desc'
 };
 
 exports.Prisma.QueryMode = {
-  default: "default",
-  insensitive: "insensitive",
+  default: 'default',
+  insensitive: 'insensitive'
 };
 
+
 exports.Prisma.ModelName = {
-  User: "User",
-  Post: "Post",
+  User: 'User',
+  Post: 'Post'
 };
 /**
  * Create the Client
  */
 const config = {
-  generator: {
-    name: "client",
-    provider: {
-      fromEnvVar: null,
-      value: "prisma-client-js",
+  "generator": {
+    "name": "client",
+    "provider": {
+      "fromEnvVar": null,
+      "value": "prisma-client-js"
     },
-    output: {
-      value:
-        "C:\\Users\\sahit\\Documents\\Projects\\Personal\\chatly-social\\server\\src\\@types\\prisma-client-js",
-      fromEnvVar: null,
+    "output": {
+      "value": "C:\\Users\\sahit\\Documents\\Projects\\Personal\\chatly-social\\server\\src\\@types\\prisma-client-js",
+      "fromEnvVar": null
     },
-    config: {
-      engineType: "library",
+    "config": {
+      "engineType": "library"
     },
-    binaryTargets: [
+    "binaryTargets": [
       {
-        fromEnvVar: null,
-        value: "windows",
-        native: true,
-      },
+        "fromEnvVar": null,
+        "value": "windows",
+        "native": true
+      }
     ],
-    previewFeatures: [],
-    isCustomOutput: true,
+    "previewFeatures": [],
+    "isCustomOutput": true
   },
-  relativeEnvPaths: {
-    rootEnvPath: "../../../.env",
-    schemaEnvPath: "../../../.env",
+  "relativeEnvPaths": {
+    "rootEnvPath": "../../../.env",
+    "schemaEnvPath": "../../../.env"
   },
-  relativePath: "../../../prisma",
-  clientVersion: "5.6.0",
-  engineVersion: "e95e739751f42d8ca026f6b910f5a2dc5adeaeee",
-  datasourceNames: ["db"],
-  activeProvider: "mongodb",
-  postinstall: false,
-  inlineDatasources: {
-    db: {
-      url: {
-        fromEnvVar: "DATABASE_URL",
-        value: null,
-      },
-    },
+  "relativePath": "../../../prisma",
+  "clientVersion": "5.6.0",
+  "engineVersion": "e95e739751f42d8ca026f6b910f5a2dc5adeaeee",
+  "datasourceNames": [
+    "db"
+  ],
+  "activeProvider": "mongodb",
+  "inlineDatasources": {
+    "db": {
+      "url": {
+        "fromEnvVar": "DATABASE_URL",
+        "value": null
+      }
+    }
   },
-  inlineSchema:
-    "Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgPSAiLi4vc3JjL0B0eXBlcy9wcmlzbWEtY2xpZW50LWpzIgp9CgpkYXRhc291cmNlIGRiIHsKICBwcm92aWRlciA9ICJtb25nb2RiIgogIHVybCAgICAgID0gZW52KCJEQVRBQkFTRV9VUkwiKQp9Cgptb2RlbCBVc2VyIHsKICBpZCAgICAgICAgICAgICBTdHJpbmcgICBAaWQgQGRlZmF1bHQoYXV0bygpKSBAbWFwKCJfaWQiKSBAZGIuT2JqZWN0SWQKICBjcmVhdGVkQXQgICAgICBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICBmaXJzdE5hbWUgICAgICBTdHJpbmcKICBsYXN0TmFtZSAgICAgICBTdHJpbmc/CiAgcHJpbWFyeUVtYWlsICAgU3RyaW5nICAgQHVuaXF1ZQogIHNlY29uZGFyeUVtYWlsIFN0cmluZz8gIEB1bmlxdWUKICBoYXNoUGFzcyAgICAgICBTdHJpbmcKICBwb3N0cyAgICAgICAgICBQb3N0W10KfQoKbW9kZWwgUG9zdCB7CiAgaWQgICAgICAgIFN0cmluZyAgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZAogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQGRlZmF1bHQobm93KCkpCiAgdXNlciAgICAgIFVzZXIgICAgIEByZWxhdGlvbihmaWVsZHM6IFt1c2VySURdLCByZWZlcmVuY2VzOiBbaWRdKQogIHVzZXJJRCAgICBTdHJpbmcgICBAZGIuT2JqZWN0SWQKfQo=",
-  inlineSchemaHash:
-    "88a7c245dc44e9d39c4da84aa6c6473ed0e9dda59f8d34dfc627fb093ae903d2",
-  noEngine: false,
-};
+  "inlineSchema": "Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuLi9zcmMvQHR5cGVzL3ByaXNtYS1jbGllbnQtanMiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gIm1vbmdvZGIiCiAgdXJsICAgICAgPSBlbnYoIkRBVEFCQVNFX1VSTCIpCn0KCm1vZGVsIFVzZXIgewogIGlkICAgICAgICAgICAgIFN0cmluZyAgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZAogIGNyZWF0ZWRBdCAgICAgIERhdGVUaW1lIEBkZWZhdWx0KG5vdygpKQogIGZpcnN0TmFtZSAgICAgIFN0cmluZwogIGxhc3ROYW1lICAgICAgIFN0cmluZz8KICBwcmltYXJ5RW1haWwgICBTdHJpbmcgICBAdW5pcXVlCiAgc2Vjb25kYXJ5RW1haWwgU3RyaW5nPyAgQHVuaXF1ZQogIGhhc2hQYXNzICAgICAgIFN0cmluZwogIHBvc3RzICAgICAgICAgIFBvc3RbXQoKICBAQG1hcCgidXNlcnMiKQp9Cgptb2RlbCBQb3N0IHsKICBpZCAgICAgICAgU3RyaW5nICAgQGlkIEBkZWZhdWx0KGF1dG8oKSkgQG1hcCgiX2lkIikgQGRiLk9iamVjdElkCiAgY3JlYXRlZEF0IERhdGVUaW1lIEBkZWZhdWx0KG5vdygpKQogIHVwZGF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1c2VyICAgICAgVXNlciAgICAgQHJlbGF0aW9uKGZpZWxkczogW3VzZXJJRF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgdXNlcklEICAgIFN0cmluZyAgIEBkYi5PYmplY3RJZAoKICBAQG1hcCgicG9zdHMiKQp9Cg==",
+  "inlineSchemaHash": "95d936a7806cf5bd94f3beb7e0621904fb23ea265a3f109c3660eaeba3d84d30"
+}
 
-const fs = require("fs");
+const fs = require('fs')
 
-config.dirname = __dirname;
-if (!fs.existsSync(path.join(__dirname, "schema.prisma"))) {
+config.dirname = __dirname
+if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   const alternativePaths = [
     "src/@types/prisma-client-js",
     "@types/prisma-client-js",
-  ];
+  ]
+  
+  const alternativePath = alternativePaths.find((altPath) => {
+    return fs.existsSync(path.join(process.cwd(), altPath, 'schema.prisma'))
+  }) ?? alternativePaths[0]
 
-  const alternativePath =
-    alternativePaths.find((altPath) => {
-      return fs.existsSync(path.join(process.cwd(), altPath, "schema.prisma"));
-    }) ?? alternativePaths[0];
-
-  config.dirname = path.join(process.cwd(), alternativePath);
-  config.isBundled = true;
+  config.dirname = path.join(process.cwd(), alternativePath)
+  config.isBundled = true
 }
 
-config.runtimeDataModel = JSON.parse(
-  '{"models":{"User":{"dbName":null,"fields":[{"name":"id","dbName":"_id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","default":{"name":"auto","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"createdAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"firstName","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"lastName","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"primaryEmail","kind":"scalar","isList":false,"isRequired":true,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"secondaryEmail","kind":"scalar","isList":false,"isRequired":false,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"hashPass","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"posts","kind":"object","isList":true,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Post","relationName":"PostToUser","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Post":{"dbName":null,"fields":[{"name":"id","dbName":"_id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","default":{"name":"auto","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"createdAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"updatedAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"user","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"User","relationName":"PostToUser","relationFromFields":["userID"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"userID","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false}},"enums":{},"types":{}}',
-);
-defineDmmfProperty(exports.Prisma, config.runtimeDataModel);
-config.getQueryEngineWasmModule = undefined;
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"dbName\":\"users\",\"fields\":[{\"name\":\"id\",\"dbName\":\"_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"String\",\"default\":{\"name\":\"auto\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"DateTime\",\"default\":{\"name\":\"now\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"firstName\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"lastName\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"primaryEmail\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":true,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"secondaryEmail\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":true,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"hashPass\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"posts\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Post\",\"relationName\":\"PostToUser\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"Post\":{\"dbName\":\"posts\",\"fields\":[{\"name\":\"id\",\"dbName\":\"_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"String\",\"default\":{\"name\":\"auto\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"DateTime\",\"default\":{\"name\":\"now\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"DateTime\",\"default\":{\"name\":\"now\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"user\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"User\",\"relationName\":\"PostToUser\",\"relationFromFields\":[\"userID\"],\"relationToFields\":[\"id\"],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"userID\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{},\"types\":{}}")
+defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
+config.getQueryEngineWasmModule = undefined
 
-const { warnEnvConflicts } = require("./runtime/library");
+
+const { warnEnvConflicts } = require('./runtime/library')
 
 warnEnvConflicts({
-  rootEnvPath:
-    config.relativeEnvPaths.rootEnvPath &&
-    path.resolve(config.dirname, config.relativeEnvPaths.rootEnvPath),
-  schemaEnvPath:
-    config.relativeEnvPaths.schemaEnvPath &&
-    path.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath),
-});
+    rootEnvPath: config.relativeEnvPaths.rootEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.rootEnvPath),
+    schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath)
+})
 
-const PrismaClient = getPrismaClient(config);
-exports.PrismaClient = PrismaClient;
-Object.assign(exports, Prisma);
+const PrismaClient = getPrismaClient(config)
+exports.PrismaClient = PrismaClient
+Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(
-  process.cwd(),
-  "src/@types/prisma-client-js/query_engine-windows.dll.node",
-);
+path.join(process.cwd(), "src/@types/prisma-client-js/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "src/@types/prisma-client-js/schema.prisma");
+path.join(process.cwd(), "src/@types/prisma-client-js/schema.prisma")
