@@ -84,7 +84,7 @@ const __login = (): JSX.Element => {
             display: "flex justify-center items-center gap-3",
           }}
         >
-          <FcGoogle className="text-2xl" /> Google
+          <FcGoogle className="text-2xl" /> Continue
         </Button>
       </Link>
     </>
