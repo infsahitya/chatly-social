@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output = "../src/@types/prisma-client-js"
 }
 
 datasource db {
@@ -7,8 +8,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
-  email          String
-  profilePicture String
+model User {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt      DateTime @default(now())
+  firstName      String
+  lastName       String?
+  primaryEmail   String   @unique
+  secondaryEmail String?  @unique
+  hashPass       String
+  posts          Post[]
+}
+
+model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  user      User     @relation(fields: [userID], references: [id])
+  userID    String   @db.ObjectId
 }
